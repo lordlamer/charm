@@ -1,0 +1,144 @@
+20110525 - fhabermann
+* using Zend_Application
+* make it runable with Zend_Application and Zendframework 1.11.6
+
+20090308 - lordlamer
+* added first stuff for project management
+
+20090305 - lordlamer
+* upgrade ZendFramework to 1.7.6
+
+20090208 - lordlamer
+* upgrade ZendFramework to 1.7.4
+
+20090121 - lordlamer
+* upgrade ZendFramework to 1.7.3
+
+20090110 - lordlamer
+* added template for gettext translation
+* added first po and mo files with translations
+* added script that creates gettext pot template
+
+20090101 - lordlamer
+* added translations
+* added hover effect in address menu
+* removed title in address menu
+* added first vcard export stuff
+
+20081230 - lordlamer
+* added translations
+* convert variable class from array to object
+
+20081228 - lordlamer
+* added gzip compression for output
+
+20081224 - lordlamer
+* update logo and css with new style
+
+20081223 - lordlamer
+* added translation to registry to allow access from view
+* added translations to address submenu
+* added first dynamic stuff for address submenu
+* upgrade ZendFramework to 1.7.2
+* upgrade of dojo toolkit
+
+20081212 - lordlamer
+* added prototype 1.6.3
+* added hover effects in address listing
+
+20081201 - lordlamer
+* added dojo
+
+20081129 - lordlamer
+* restructe view scripts to reduce redundant code
+
+20081126 - lordlamer
+* added new view scripts for address to reduce redunant code
+
+20081125 - lordlamer
+* added column url to companycontact
+* added fields in company and contactlisting
+
+20081124 - lordlamer
+* added more fields to companylisting
+
+20081123 - lordlamer
+* added delete functionality
+* do some code cleanup
+* added htaccess files to folder config,lib,dumps,application,log
+
+20081122 - lordlamer
+* added counter of company contacts in tabs
+* changed add and edit functions of addresses
+* added some functions to crm_address class
+* added delete actions and templates
+
+20081121 - lordlamer
+* added functions to edit contacts and companies
+* you can add companies now
+
+20081119 - lordlamer
+* update to zend framework 1.7.0
+
+20081110 - lordlamer
+* added elements for Company_Contacts
+
+20081108 - lordlamer
+* added default form class for contact add and edit
+* added more elements to company form
+
+20081103 - lordlamer
+* testing new generation of forms
+
+20081101 - lordlamer
+* added roadmap
+
+20081030 - lordlamer
+* added favicons and logos
+* small layout settings
+
+20081026 - lordlamer
+* added edit buttons for address
+* added edit template for address
+
+20081021 - lordlamer
+* added new styles and content
+
+20081020 - lordlamer
+* added new styles
+* added first acl stuff
+* added links to top in address
+
+20081018 - lordlamer
+* added adapter for log
+* added locale options
+* added translation
+* added own registry
+* added acl class
+
+20081017 - lordlamer
+* added Zend 1.7.0PR
+
+20081016 - lordlamer
+* added log folder and config values
+* added styles for buttons
+* added titles for each section
+
+20081012 - lordlamer
+* fixed problems with controller
+* added new css styles
+* changed layout for address view
+* added modules.ini
+* added license
+
+20081010 - lordlamer
+* created modules.ini
+* added styles for adress listing
+
+20081008 - lordlamer
+* added .htaccess for apache rewrites
+* changed css filename in templates
+* added css styles
+* add base_path and base_url to config
+* added base_url to layout
+* add vars to controller for templates

@@ -1,0 +1,82 @@
+[production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+includePaths.library = PROJECT_PATH "/lib"
+bootstrap.path = APPLICATION_PATH "/Bootstrap.php"
+bootstrap.class = "Bootstrap"
+appnamespace = "Application"
+resources.frontController.controllerDirectory = APPLICATION_PATH "/controller"
+resources.layout.layoutPath = APPLICATION_PATH "/views/scripts"
+resources.frontController.params.displayExceptions = 1
+
+[staging : production]
+
+[testing : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+
+[development : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+
+[base]
+version = 1.0.0
+title = ChaRM
+cryptkey = yourcryptkeyhere
+path = /www/charm
+url = http://localhost/projekte/charm/public/
+
+[locale]
+default = de_DE
+
+[output]
+
+[database]
+adapter = Pdo_Pgsql
+params.host = localhost
+params.username = username
+params.password = password
+params.dbname = charm
+profiler = true
+
+[layout]
+layout = layout
+layoutPath = APPLICATION_PATH "/views/scripts"
+contentKey = CONTENT
+
+[cache]
+frontend.name = Core
+frontend.options.lifetime = 3600
+backend.name = File
+backend.options.cache_dir = PROJECT_PATH "/data/cache"
+
+[log]
+file = PROJECT_PATH "/data/log/error.log"
+
+[session]
+save_path = PROJECT_PATH "/data/sessions"
+use_only_cookies = on
+remember_me_seconds = 3600
+name = knowledgeroot
+
+[lucene]
+save_path = PROJECT_PATH "/data/lucene"
+
+[mail]
+;php or smtp
+transport = php
+
+;# php options
+;parameters =
+
+;# smtp options
+;host = localhost
+;options.xxx = yyy
+
+[auth]
+
+[upload]
+
+[translation]
+adapter = gettext
+folder = PROJECT_PATH "/locale"

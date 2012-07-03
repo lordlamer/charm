@@ -1,0 +1,47 @@
+<?php include('include/header.phtml'); ?>
+
+<div class="content-box">
+	<?php include('include/menu.phtml'); ?>
+	<?php include('include/tabs.phtml'); ?>
+	<div class="content-box-body">
+	<?php include('include/submenu.phtml'); ?>
+
+	<table class="listing" border="0" cellspacing="0" cellpadding="0" width="100%">
+		<tr class="listing-header">
+			<td>Aufgabe</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td>Details</td>
+		</tr>
+		<tr class="listing-row">
+			<td>
+				<?php echo $this->task['name']; ?><br />
+				<?php echo $this->task['description']; ?><br />
+			</td>
+		</tr>
+	</table>
+
+	<table class="listing" border="0" cellspacing="0" cellpadding="0" width="100%">
+		<tr class="listing-header">
+			<td>Rückmeldungen</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td>Meldungen</td>
+		</tr>
+		<?php
+		if(is_array($this->feedbacks)) {
+			foreach($this->feedbacks as $value) {
+		?>
+		<tr class="listing-row">
+			<td>
+				<?php echo $this->task['name']; ?><br />
+				<?php echo $this->task['description']; ?><br />
+			</td>
+		</tr>
+		<?php
+			}
+		}
+		?>
+	</table>
+	</div>
+</div>

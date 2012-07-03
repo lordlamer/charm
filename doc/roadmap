@@ -1,0 +1,49 @@
+version 0.1
+* add/edit/del of companies and contacts
+* search of contacts
+* hcard/vcard export of contacts
+* installer
+
+version 0.2
+* add/edit/del of projects and taks
+* search in projects and tasks
+* ticketids
+
+version 0.3
+* dashboard with custom views
+* add notes and fileuploads to address and projects
+* link address with projects and projects with address
+
+version 0.4
+* added admin part for administration of users and groups
+* add acl for modules for users and groups
+* enable configuration
+* enable options for password change
+
+version 0.5
+* add/edit/del appointments
+* link to contacts projects and resources
+* vcal/ical export
+
+version 0.6
+* add wiki/knowledgebase
+
+version 0.7
+* add/edit/del process
+
+version 0.8
+* add/edit/del distribution
+
+version 0.9
+* dashboard integration of process and distribution and appointments
+* export of appointments and contacts
+* ldap authentification
+
+version 1.0
+* testing release and bugfixrelease
+
+version 1.1
+* bugtracker and tickethandling for non crm users
+
+version 1.2
+* email integration

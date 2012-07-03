@@ -1,0 +1,12 @@
+	<div style="" class="content-box-header">
+		<ul class="function">
+			<li><a class="button" href="./address/addcompany"><?php echo $this->translate('new company'); ?></a></li>
+			<?php if(isset($this->company['id'])) { ?><li><a class="button" href="./address/editcompany/id/<?php echo $this->company['id']; ?>"><?php echo $this->translate('edit company'); ?></a></li><?php } ?>
+			<?php if(isset($this->company['id'])) { ?><li><a class="button" href="./address/delcompany/id/<?php echo $this->company['id']; ?>"><?php echo $this->translate('delete company'); ?></a></li><?php } ?>
+			<?php if(isset($this->company['id'])) { ?><li><a class="button" href="./address/companyvcardexport/id/<?php echo $this->company['id']; ?>"><?php echo $this->translate('company vcard export'); ?></a></li><?php } ?>
+			<?php if(isset($this->company['id'])) { ?><li><a class="button" href="./address/addcontact/id/<?php echo $this->company['id']; ?>"><?php echo $this->translate('new contact'); ?></a></li><?php } ?>
+			<?php if(isset($this->contact['id'])) { ?><li><a class="button" href="./address/editcontact/id/<?php echo $this->contact['id']; ?>"><?php echo $this->translate('edit contact'); ?></a></li><?php } ?>
+			<?php if(isset($this->contact['id'])) { ?><li><a class="button" href="./address/delcontact/id/<?php echo $this->contact['id']; ?>"><?php echo $this->translate('delete contact'); ?></a></li><?php } ?>
+			<?php if(isset($this->contact['id'])) { ?><li><a class="button" href="./address/vcardexport/id/<?php echo $this->contact['id']; ?>"><?php echo $this->translate('contact vcard export'); ?></a></li><?php } ?>
+		</ul>
+	</div>

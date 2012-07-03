@@ -1,0 +1,21 @@
+<?php include('include/header.phtml'); ?>
+
+<div class="content-box">
+	<?php include('include/menu.phtml'); ?>
+	<?php include('include/tabs.phtml'); ?>
+	<div class="content-box-body">
+	<?php include('include/submenu.phtml'); ?>
+
+Name: <?= $this->project['name'] ?><br />
+Beschreibung: <?= $this->project['description'] ?><br />
+
+
+	</table>
+
+	<div style="margin-top:10px;">
+	<h3 style="margin-left: 2px;">Project loeschen?</h3>
+	<?php echo $this->confirmform; ?>
+	</div>
+
+	</div>
+</div>

@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:<?php echo $this->contact['name']; ?>;<?php echo $this->contact['firstname'] . "\n"; ?>
+FN:<?php echo $this->contact['firstname']; ?> <?php echo $this->contact['name'] . "\n"; ?>
+ORG:<?php echo $this->contact['companyid'] . "\n"; ?>
+URL;WORK:<?php echo $this->contact['url'] . "\n"; ?>
+EMAIL;TYPE=INTERNET:<?php echo $this->contact['email'] . "\n"; ?>
+TEL;WORK:<?php echo $this->contact['phone'] . "\n"; ?>
+TEL;FAX:<?php echo $this->contact['fax'] . "\n"; ?>
+TEL;CELL:<?php echo $this->contact['mobilephone'] . "\n"; ?>
+ADR;WORK:;;<?php echo $this->contact['privatestreet']; ?>;<?php echo $this->contact['privatecity']; ?>;;<?php echo $this->contact['privatezip']; ?>;Germany
+END:VCARD

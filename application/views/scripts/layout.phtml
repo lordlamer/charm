@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title><?php echo $this->class->config->base->title; ?></title>
+	<base href="<?php echo $this->class->config->base->url; ?>" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="generator" content="charm" />
+	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="css/layout.css" media="all" />
+	<!-- <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script> -->
+	<script type="text/javascript" src="js/prototype.js"></script>
+</head>
+<body>
+<div class="header">
+	<a href="#"><img src="img/logo_s_bgo.png" class="logo" /></a>
+	<!-- <span><?php echo $this->class->config->base->title ?></span> -->
+
+	<div class="header-right">
+<?php
+	$date = new Zend_Date();
+?>
+	        <p>
+            <?php echo $this->translate('Logged in as %s', $this->class->user->get('login')); ?><span class="separator">|</span><?php echo $date->get(Zend_Date::WEEKDAY).', '.$date->get(Zend_Date::MONTH_NAME).' '.$date->get(Zend_Date::DAY_SHORT).', '.$date->get(Zend_Date::YEAR); ?><span class="separator">|</span><a href="./logout/"><?php echo $this->translate('Log Out'); ?></a>
+        	</p>
+	</div>
+</div>
+<div class="nav-bar">
+	<ul id="nav">
+		<li<?php echo (($this->class->controller->getRequest()->getControllerName() == 'index') ? ' class="active"' : ''); ?>><a href="./dashboard"><?php echo $this->translate('dashboard'); ?></a></li>
+		<li<?php echo (($this->class->controller->getRequest()->getControllerName() == 'address') ? ' class="active"' : ''); ?>><a href="./address"><?php echo $this->translate('address'); ?></a></li>
+		<li<?php echo (($this->class->controller->getRequest()->getControllerName() == 'calendar') ? ' class="active"' : ''); ?>><a href="./calendar"><?php echo $this->translate('calendar'); ?></a></li>
+		<li<?php echo (($this->class->controller->getRequest()->getControllerName() == 'process') ? ' class="active"' : ''); ?>><a href="./process"><?php echo $this->translate('process'); ?></a></li>
+		<li<?php echo (($this->class->controller->getRequest()->getControllerName() == 'distribution') ? ' class="active"' : ''); ?>><a href="./distribution"><?php echo $this->translate('distribution'); ?></a></li>
+		<li<?php echo (($this->class->controller->getRequest()->getControllerName() == 'project') ? ' class="active"' : ''); ?>><a href="./project"><?php echo $this->translate('projects'); ?></a></li>
+		<li<?php echo (($this->class->controller->getRequest()->getControllerName() == 'wiki') ? ' class="active"' : ''); ?>><a href="./wiki"><?php echo $this->translate('wiki'); ?></a></li>
+		<li<?php echo (($this->class->controller->getRequest()->getControllerName() == 'option') ? ' class="active"' : ''); ?>><a href="./option"><?php echo $this->translate('options'); ?></a></li>
+	</ul>
+
+	<a id="page-help-link" href="javascript:;"><?php echo $this->translate('help'); ?></a>
+</div>
+<div style="display:none;" class="info-message">
+	Information Message
+</div>
+<div class="content">
+	<?php echo $this->layout()->content ?>
+</div>
+</body>
+</html>

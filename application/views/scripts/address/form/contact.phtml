@@ -1,0 +1,75 @@
+<form action="<?= $this->escape($this->element->getAction()) ?>" method="<?= $this->escape($this->element->getMethod()) ?>">
+	<?= $this->element->id ?>
+	<?= $this->element->companyid ?>
+
+	<table class="listing" border="0" cellspacing="0" cellpadding="0" width="100%">
+		<tr class="listing-header">
+			<td colspan="2">Daten</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Kontakt</td>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->title ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->salution ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->firstname ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->name ?>
+		</tr>
+
+		<tr class="listing-row-alternate">
+			<td colspan="2">Anschrift</td>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->phone ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->mobilephone ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->privatestreet ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->privatezip ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->privatecity ?>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Web</td>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->url ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->email ?>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Branche</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Sonstiges</td>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->birthday ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->position ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->note ?>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Relationen</td>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->submit ?>
+		</tr>
+	</table>
+
+</form>

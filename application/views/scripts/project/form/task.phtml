@@ -1,0 +1,79 @@
+<form action="<?= $this->escape($this->element->getAction()) ?>" method="<?= $this->escape($this->element->getMethod()) ?>">
+	<?= $this->element->id ?>
+
+	<table class="listing" border="0" cellspacing="0" cellpadding="0" width="100%">
+		<tr class="listing-header">
+			<td colspan="2">Daten</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Projekt</td>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->projectid ?>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Aufgabe</td>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->name ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->description ?>
+		</tr>
+		<?php /*
+		<tr class="listing-row">
+			<?= $this->element->supervisor ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->status ?>
+		</tr>
+
+		<tr class="listing-row-alternate">
+			<td colspan="2">Kontakt</td>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->priority ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->company ?>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Web</td>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->contact ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->ticketprefix ?>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Branche</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Sonstiges</td>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->starttime ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->endtime ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->targethours ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->targetminutes ?>
+		</tr>
+		<tr class="listing-row">
+			<?= $this->element->private ?>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Relationen</td>
+		</tr>
+		*/ ?>
+		<tr class="listing-row">
+			<?= $this->element->submit ?>
+		</tr>
+	</table>
+
+</form>

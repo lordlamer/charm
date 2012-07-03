@@ -1,0 +1,11 @@
+<div class="content-box-subheader">
+	<div class="tabs">
+		<div<?php if($this->activetab == 'company') { ?> class="active"<?php } ?>><a href="./address/showcompany/id/<?php echo $this->company['id']; ?>"><?php echo $this->translate('company'); ?></a></div>
+		<div<?php if($this->activetab == 'contact') { ?> class="active"<?php } ?>><a href="./address/showcontacts/id/<?php echo $this->company['id']; ?>"><?php echo $this->translate('contacts'); ?> (<?php echo $this->companycontactsno; ?>)</a></div>
+		<div<?php if($this->activetab == 'note') { ?> class="active"<?php } ?>><a href="./address/shownotes/id/<?php echo $this->company['id']; ?>"><?php echo $this->translate('notes'); ?></a></div>
+		<div<?php if($this->activetab == 'process') { ?> class="active"<?php } ?>><a href="./address/showprocess/id/<?php echo $this->company['id']; ?>"><?php echo $this->translate('process'); ?></a></div>
+		<div<?php if($this->activetab == 'project') { ?> class="active"<?php } ?>><a href="./address/showprojects/id/<?php echo $this->company['id']; ?>"><?php echo $this->translate('projects'); ?></a></div>
+		<div<?php if($this->activetab == 'calendar') { ?> class="active"<?php } ?>><a href="./address/showcalender/id/<?php echo $this->company['id']; ?>"><?php echo $this->translate('appointment'); ?></a></div>
+		<div<?php if($this->activetab == 'file') { ?> class="active"<?php } ?>><a href="./address/showfiles/id/<?php echo $this->company['id']; ?>"><?php echo $this->translate('files'); ?></a></div>
+	</div>
+</div>

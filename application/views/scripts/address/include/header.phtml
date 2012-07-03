@@ -1,0 +1,4 @@
+<div class="content-header">
+	<div class="title"><?php echo $this->translate('address'); ?></div>
+	<div class="menu"><a <?php echo (($this->search == '') ? 'class="active" ' : '');?>href="./address"><?php echo strtoupper($this->translate('all')); ?></a> <a <?php echo (($this->search == '1') ? 'class="active" ' : '');?>href="./address/list/search/1">1-9</a> <?php for($i=65;$i<=90;$i++) { echo '<a '.(($this->search == chr($i)) ? 'class="active" ' : '').'href="./address/list/search/'.chr($i).'">'.chr($i).'</a> '; } ?></div>
+</div>

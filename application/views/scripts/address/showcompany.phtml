@@ -1,0 +1,60 @@
+<?php include('include/header.phtml'); ?>
+
+<div class="content-box">
+	<?php include('include/menu.phtml'); ?>
+	<?php include('include/tabs.phtml'); ?>
+	<div class="content-box-body">
+	<?php include('include/submenu.phtml'); ?>
+
+	<table class="listing" border="0" cellspacing="0" cellpadding="0" width="100%">
+		<tr class="listing-header">
+			<td>Daten</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td>Anschrift</td>
+		</tr>
+		<tr class="listing-row">
+			<td>
+				<?php echo $this->company['name']; ?><br />
+				<?php echo $this->company['street']; ?><br />
+				<?php echo $this->company['zip']; ?>
+				<?php echo $this->company['city']; ?><br />
+			</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td>Kontakt</td>
+		</tr>
+		<tr class="listing-row">
+			<td>
+				Phone: <a href="callto:<?php echo $this->company['phone']; ?>"><?php echo $this->company['phone']; ?></a><br />
+				Fax: <?php echo $this->company['fax']; ?><br />
+			</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td>Web</td>
+		</tr>
+		<tr class="listing-row">
+			<td>
+				Homepage: <a href="<?php echo $this->company['url']; ?>"><?php echo $this->company['url']; ?></a><br />
+				Email: <a href="mailto:<?php echo $this->company['email']; ?>"><?php echo $this->company['email']; ?></a><br />
+			</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td>Branche</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td>Sonstiges</td>
+		</tr>
+		<tr class="listing-row">
+			<td>
+				Note: <?php echo $this->company['note']; ?><br />
+				Karte: <a href="http://maps.google.de/maps?q=<?php echo $this->company['street'] . ',' . $this->company['zip'] . ' ' . $this->company['city']; ?>">Google Maps</a>
+			</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td>Relationen</td>
+		</tr>
+	</table>
+
+	</div>
+</div>

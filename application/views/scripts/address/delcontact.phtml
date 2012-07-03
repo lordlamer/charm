@@ -1,0 +1,91 @@
+<?php include('include/header.phtml'); ?>
+
+<div class="content-box">
+	<?php include('include/menu.phtml'); ?>
+	<?php include('include/tabs.phtml'); ?>
+	<div class="content-box-body">
+	<?php include('include/submenu.phtml'); ?>
+
+<table class="listing" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr class="listing-header">
+	<td colspan="2">Daten</td>
+</tr>
+<tr class="listing-row-alternate">
+	<td colspan="2">Anschrift</td>
+</tr>
+		<tr class="listing-row">
+			<td><label for="title" class="optional">Title</label></td>
+			<td><?php echo $this->contact['title']; ?></td>
+		</tr>
+		<tr class="listing-row">
+			<td><label for="salution" class="optional">Salution</label></td>
+			<td><?php echo $this->contact['salution']; ?></td>
+		</tr>
+		<tr class="listing-row">
+			<td><label for="firstname" class="optional">Firstname</label></td>
+			<td><?php echo $this->contact['firstname']; ?></td>
+		</tr>
+		<tr class="listing-row">
+			<td><label for="name" class="optional">Name</label></td>
+			<td><?php echo $this->contact['name']; ?></td>
+		</tr>
+		<tr class="listing-row">
+			<td><label for="position" class="optional">Position</label></td>
+			<td><?php echo $this->contact['position']; ?></td>
+		</tr>
+		<tr class="listing-row">
+			<td><label for="email" class="optional">Email</label></td>
+			<td><?php echo $this->contact['email']; ?></td>
+		</tr>
+		<tr class="listing-row">
+			<td><label for="phone" class="optional">Phone</label></td>
+			<td><?php echo $this->contact['phone']; ?></td>
+		</tr>
+		<tr class="listing-row">
+			<td><label for="mobilephone" class="optional">Mobilephone</label></td>
+			<td><?php echo $this->contact['mobilephone']; ?></td>
+		</tr>
+		<tr class="listing-row">
+			<td><label for="privatestreet" class="optional">Privatestreet</label></td>
+			<td><?php echo $this->contact['privatestreet']; ?></td>
+		</tr>
+		<tr class="listing-row">
+			<td><label for="privatezip" class="optional">Privatezip</label></td>
+			<td><?php echo $this->contact['privatezip']; ?></td>
+		</tr>
+		<tr class="listing-row">
+			<td><label for="privatecity" class="optional">Privatecity</label></td>
+			<td><?php echo $this->contact['privatecity']; ?></td>
+		</tr>
+		<tr class="listing-row">
+			<td><label for="birthday" class="optional">Birthday</label></td>
+			<td><?php echo $this->contact['birthday']; ?></td>
+		</tr>
+		<tr class="listing-row">
+			<td><label for="note" class="optional">Note</label></td>
+			<td><?php echo $this->contact['note']; ?></td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Kontakt</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Web</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Branche</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Sonstiges</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td colspan="2">Relationen</td>
+		</tr>
+
+</table>
+
+	<div style="margin-top:10px;">
+	<h3 style="margin-left: 2px;">Kontakt loeschen?</h3>
+	<?php echo $this->confirmform; ?>
+	</div>
+	</div>
+</div>

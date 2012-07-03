@@ -1,0 +1,8 @@
+	<div style="" class="content-box-header">
+		<ul class="function">
+			<li><a class="button" href="./project/addproject"><?php echo $this->translate('new project'); ?></a></li>
+			<li><a class="button" href="./project/addtask"><?php echo $this->translate('new ticket'); ?></a></li>
+			<?php if(isset($this->project['id'])) { ?><li><a class="button" href="./project/editproject/id/<?php echo $this->project['id']; ?>"><?php echo $this->translate('edit project'); ?></a></li><?php } ?>
+			<?php if($this->task['name'] != '') { ?><li><a class="button" href="./project/newfeedback/id/<?php echo $this->task['id']; ?>"><?php echo $this->translate('new feedback'); ?></a></li><?php } ?>
+		</ul>
+	</div>

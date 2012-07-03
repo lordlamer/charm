@@ -1,0 +1,48 @@
+<?php include('include/header.phtml'); ?>
+
+<div class="content-box">
+	<?php include('include/menu.phtml'); ?>
+	<?php include('include/tabs.phtml'); ?>
+	<div class="content-box-body">
+	<?php include('include/submenu.phtml'); ?>
+
+<table class="listing" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr class="listing-header">
+	<td>Name</td>
+	<td>Anschrift</td>
+	<td>Telefon</td>
+	<td>Internet</td>
+	<td>Aktion</td>
+</tr>
+<?php
+
+if(is_array($this->contacts)) {
+	$x = 0;
+	foreach($this->contacts as $key => $value) {
+		echo '<tr onmouseover="Element.addClassName(this,\'listing-row-over\');" onmouseout="Element.removeClassName(this,\'listing-row-over\');" onclick="window.location = \'./address/showcontact/id/'.$value['id'].'\';" class="listing-row'.(($x == 1) ? '-alternate' : '').'">
+			<td><a href="./address/showcontact/id/'.$value['id'].'">'.$value['salution'].' '.$value['title'].' '.$value['firstname'].' '.$value['name'].'</a></td>
+			<td>'.$value['privatestreet'].'<br />'.$value['privatezip'].' '.$value['privatecity'].'</td>
+			<td>
+			'.(($value['phone']) ? 'Phone: '.$value['phone'].'<br />' : ''). '
+			'.(($value['mobilephone']) ? 'Mobile: '.$value['mobilephone'].'<br />' : ''). '
+			'.(($value['fax']) ? 'Fax: '.$value['fax'] : ''). '
+			</td>
+			<td>
+			'.(($value['url']) ? 'Homepage: '.$value['url'].'<br />' : ''). '
+			'.(($value['email']) ? 'Email: '.$value['email'] : ''). '
+			</td>
+			<td><a class="button" href="./address/editcontact/id/'.$value['id'].'">bearbeiten</a><a class="button" href="./address/delcontact/id/'.$value['id'].'">löschen</a></td>
+		</tr>'."\n";
+
+		if($x == 0) {
+			$x = 1;
+		} else {
+			$x = 0;
+		}
+	}
+}
+
+?>
+</table>
+	</div>
+</div>

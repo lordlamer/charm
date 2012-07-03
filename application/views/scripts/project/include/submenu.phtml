@@ -1,0 +1,28 @@
+<?php
+/**
+ * define vars
+ */
+
+$config = new Zend_Config_Ini($this->class->config->base->path . '/config/modules.ini');
+
+$actualPage = ((isset($this->actualPage)) ? $this->actualPage : 1);
+$maxPage = ((isset($this->maxPage)) ? $this->maxPage : 1);
+
+$showItems = ((isset($this->showItems)) ? $this->showItems : 10);
+$itemList = ((isset($config->address->default->listing->groupfornumberofelements)) ? explode(',', $config->address->default->listing->groupfornumberofelements): array(10,20,50,100));
+
+$elementNumber = 20;
+?>
+<div class="listing-control-box">
+<?php echo $this->translate('page'); ?> < <input class="tiny" type="text" name="" value="<?php echo $actualPage; ?>" /> > <?php echo $this->translate('of'); ?> <?php echo $maxPage; ?> <span class="separator">|</span>
+<?php echo $this->translate('show'); ?> <select class="small">
+<?php
+foreach($itemList as $value) {
+	echo '<option value="'.$value.'"'.(($showItems == $value) ? ' selected="selected"' : '').'>'.$value.'</option>';
+}
+?>
+</select><span class="separator">|</span>
+<?php echo $this->translate('found'); ?> <?php echo $elementNumber; ?> <?php echo $this->translate('items'); ?><span class="separator">|</span>
+<?php echo $this->translate('search'); ?>: <input class="middle search" type="text" name="" value="" /><input class="small" type="submit" value="GO" /><span class="separator">|</span>
+<?php echo $this->translate('advanced search'); ?>
+</div>

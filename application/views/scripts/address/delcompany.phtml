@@ -1,0 +1,51 @@
+<?php include('include/header.phtml'); ?>
+
+<div class="content-box">
+	<?php include('include/menu.phtml'); ?>
+	<?php include('include/tabs.phtml'); ?>
+	<div class="content-box-body">
+	<?php include('include/submenu.phtml'); ?>
+
+	<table class="listing" border="0" cellspacing="0" cellpadding="0" width="100%">
+		<tr class="listing-header">
+			<td>Rubrik</td>
+			<td>Inhalt</td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td>Anschrift</td>
+			<td>
+				<?php echo $this->company['name']; ?><br />
+				<?php echo $this->company['street']; ?><br />
+				<?php echo $this->company['zip']; ?>
+				<?php echo $this->company['city']; ?><br />
+			</td>
+		</tr>
+		<tr class="listing-row">
+			<td>Kontakt</td>
+			<td></td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td>Web</td>
+			<td></td>
+		</tr>
+		<tr class="listing-row">
+			<td>Branche</td>
+			<td></td>
+		</tr>
+		<tr class="listing-row-alternate">
+			<td>Sonstiges</td>
+			<td></td>
+		</tr>
+		<tr class="listing-row">
+			<td>Relationen</td>
+			<td></td>
+		</tr>
+	</table>
+
+	<div style="margin-top:10px;">
+	<h3 style="margin-left: 2px;">Firma loeschen?</h3>
+	<?php echo $this->confirmform; ?>
+	</div>
+
+	</div>
+</div>
