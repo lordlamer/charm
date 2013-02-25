@@ -15,7 +15,7 @@ class ProjectController extends Zend_Controller_Action {
 	$projects = $project->find();
 
 	$showProjects = array();
-print_r($session->id);
+
 	foreach($projects as $key => $value) {
 	    $users = explode('|', $value->getEmployees());
 	    //foreach($users as $uvalue) {
@@ -27,6 +27,10 @@ print_r($session->id);
 
 	$this->view->userid = $session->id;
 	$this->view->projects = $showProjects;
+
+	// get categories
+	$category = new Charm_Category('project');
+	$this->view->categories = $category->getCategories();
     }
 
     public function __call($name, $params) {
