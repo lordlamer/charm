@@ -1,0 +1,113 @@
+<?php
+/**
+ * load config
+ */
+$config = Zend_Registry::get('config');
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta charset="utf-8">
+	<title>ChaRM by Integra Internet Management GmbH</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<base href="<?= $config->base->base_url ?>" />
+
+	<!-- Le styles -->
+	<link href="./css/bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+	    body {
+		padding-top: 60px;
+		padding-bottom: 40px;
+	    }
+	    .sidebar-nav {
+		padding: 9px 0;
+	    }
+	</style>
+	<link href="./css/bootstrap-responsive.css" rel="stylesheet">
+
+	<script src="./js/jquery.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    </head>
+
+    <body>
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+	    <div class="navbar-inner">
+		<div class="container-fluid">
+		    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		    </a>
+		    <a class="brand" href="#">ChaRM</a>
+		    <ul class="nav nav-text pull-right">
+			<li class="dropdown">
+			    <a href="#"
+			       class="dropdown-toggle"
+			       data-toggle="dropdown">
+				<i class="icon-user icon-white"></i>&nbsp;
+				<?php
+				$session = Zend_Registry::get('session');
+				echo $session->username;
+				?>
+				<b class="caret"></b>
+			    </a>
+			    <ul class="dropdown-menu">
+				<li><a href="./options">Optionen</a></li>
+				<li><a href="./logout">Logout</a></li>
+			    </ul>
+			</li>
+		    </ul>
+
+		    <form class="navbar-search pull-right">
+			<input type="text" class="search-query" placeholder="Search">
+		    </form>
+
+		    <ul class="nav">
+
+			<li class="dropdown">
+			    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				<i class="icon-plus icon-white"></i>&nbsp;<strong>Neu</strong>
+				<b class="caret"></b>
+			    </a>
+			    <ul class="dropdown-menu">
+				<li><a href="page/new">Aufgabe</a></li>
+				<li><a href="content/new">Projekt</a></li>
+				<li><a href="content/new">Kontakt</a></li>
+				<li><a href="content/new">Termin</a></li>
+			    </ul>
+			</li>
+
+		    </ul>
+
+		    <div class="nav-collapse collapse">
+			<ul class="nav">
+			    <li<?= ((Zend_Controller_Front::getInstance()->getRequest()->getControllerName() == 'index') ? ' class="active"' : '') ?>><a href="dashboard">Dashboard</a></li>
+			    <li<?= ((Zend_Controller_Front::getInstance()->getRequest()->getControllerName() == 'address') ? ' class="active"' : '') ?>><a href="address">Adressen</a></li>
+			    <li<?= ((Zend_Controller_Front::getInstance()->getRequest()->getControllerName() == 'calendar') ? ' class="active"' : '') ?>><a href="calendar">Termine</a></li>
+			    <li<?= ((Zend_Controller_Front::getInstance()->getRequest()->getControllerName() == 'project') ? ' class="active"' : '') ?>><a href="project">Projekte</a></li>
+			    <li<?= ((Zend_Controller_Front::getInstance()->getRequest()->getControllerName() == 'billing') ? ' class="active"' : '') ?>><a href="billing">Abrechnung</a></li>
+			</ul>
+		    </div><!--/.nav-collapse -->
+		</div>
+	    </div>
+	</div>
+
+	<div class="container">
+	    <?php echo $this->layout()->content; ?>
+	</div><!--/.fluid-container-->
+
+	<!-- Le javascript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+
+
+    </body>
+</html>

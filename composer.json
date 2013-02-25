@@ -1,0 +1,17 @@
+{
+    "name": "lordlamer/charm",
+    "description": "ChaRM WICE Binding",
+    "version": "1.0.0",
+    "type": "app",
+    "keywords": [
+        "wice",
+        "crm",
+	"charm"
+    ],
+    "homepage": "http://www.2im.de",
+    "license": "BSD-3-Clause",
+    "require": {
+        "php": ">=5.3.3",
+	"zendframework/zendframework1": "1.12.*",
+    }
+}

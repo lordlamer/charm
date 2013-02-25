@@ -1,0 +1,9 @@
+<div class="navbar">
+    <div class="navbar-inner">
+	<ul class="nav">
+	    <li<?= ((Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'index') ? ' class="active"' : '') ?>><a href="project">Projekte</a></li>
+	    <li<?= ((Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'task') ? ' class="active"' : '') ?>><a href="project/task">Aufgaben</a><?= $this->test2 ?></li>
+	    <!-- <li<?= ((Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'weekly') ? ' class="active"' : '') ?>><a href="project/weekly">Wochenplan</a></li> -->
+	</ul>
+    </div>
+</div>

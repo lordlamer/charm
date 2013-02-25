@@ -1,0 +1,72 @@
+[production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+includePaths.library = PROJECT_PATH "/lib"
+bootstrap.path = APPLICATION_PATH "/Bootstrap.php"
+bootstrap.class = "Bootstrap"
+appnamespace = "Charm"
+resources.frontController.controllerDirectory = APPLICATION_PATH "/controllers"
+resources.frontController.params.displayExceptions = 1
+resources.frontController.defaultControllerName = "index"
+resources.frontController.defaultAction = "index"
+
+resources.layout.layoutPath = APPLICATION_PATH "/layout/"
+resources.layout.layout = "layout"
+
+resources.view.encoding = "UTF-8"
+resources.view.basePath = APPLICATION_PATH "/view/"
+[staging : production]
+
+[testing : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+
+[development : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+resources.frontController.params.displayExceptions = 1
+
+[base]
+version = "1.0-dev"
+title = "ChaRM"
+cryptkey = "yourcryptkeyhere"
+base_path = "/www/charm"
+base_url = "http://localhost/projekte/charm/public/"
+charset = "UTF-8"
+locale = "en_US"
+timezone = "Europe/Berlin";
+
+[database]
+adapter = "Pdo_Mysql"
+params.host = "localhost"
+params.username = "root"
+params.password = ""
+params.dbname = "charm"
+params.charset = "utf8"
+profiler = true
+
+[cache]
+options.caching = false
+options.lifetime = "7200"
+options.automatic_serialization = "1"
+path = "cache/"
+frontend.name = Core
+frontend.options.lifetime = 3600
+frontend.options.automatic_serialization = true
+backend.name = File
+backend.options.cache_dir = PROJECT_PATH "/data/cache"
+
+[layout]
+path = app/layout/
+name = layout
+
+[session]
+;handle = "1"
+;lifetime = "60"
+;check_browser = "1"
+;check_ip = "1"
+;only_cookies = "1"
+save_path = PROJECT_PATH "/data/sessions"
+use_only_cookies = on
+remember_me_seconds = 3600
+name = charm

@@ -1,0 +1,51 @@
+<?= $this->partial('project/subnav.phtml'); ?>
+
+<h2>Projekte</h2>
+<hr>
+<div class="row-fluid" style="margin-bottom: 20px;">
+    <div class="pull-right">
+	<button class="btn btn-primary">Projekt anlegen</button>
+    </div>
+</div>
+<div class="well">
+    FILTER
+</div>
+<div class="well">
+    <table class="table table-hover table-bordered table-striped" style="background-color: #ffffff;">
+	<thead>
+	    <tr>
+		<th>ID</th>
+		<th>Titel</th>
+		<th>Firma</th>
+		<th>Supervisor</th>
+		<th>action</th>
+	    </tr>
+	</thead>
+	<tbody>
+	    <?php
+	    foreach($this->projects as $key => $value) {
+	    ?>
+	    <tr>
+		<td><?= $value->getId() ?></td>
+		<td><a href="./project/<?= $value->getId() ?>"><?= $value->getName() ?></a></td>
+		<td><?= $value->getCompany(); ?></td>
+		<td><?= $value->getSupervisor(); ?></td>
+		<td>
+		    <div class="btn-group">
+			<a class="btn btn-primary" href="./project/edit/<?= $value->getId() ?>">edit</a>
+			<button class="btn dropdown-toggle btn-primary" data-toggle="dropdown">
+			    <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+			    <li><a href="./project/disable/<?= $value->getId() ?>">disable</a></li>
+			    <li><a href="./project/delete/<?= $value->getId() ?>">delete</a></li>
+			</ul>
+		    </div>
+		</td>
+	    </tr>
+	    <?php
+	    }
+	    ?>
+	</tbody>
+    </table>
+</div>
