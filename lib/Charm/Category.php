@@ -5,11 +5,13 @@
  */
 class Charm_Category {
     protected $table = null;
+    protected $label = null;
     protected $id = null;
     protected $name = null;
 
-    public function __construct($table, $id = null) {
+    public function __construct($table, $label, $id = null) {
 	$this->table = $table;
+	$this->label = $label;
 
 	if(!empty($id))
 	    $this->load($id);
@@ -22,6 +24,7 @@ class Charm_Category {
 	$select->where('rowid = ?', $id);
         $select->where('mandant = ?', 24);
 	$select->where('table_name = ?', $this->table);
+	$select->where('this_table_alias = ?', $this->label);
 
         $row = $category->fetchRow($select);
 
@@ -48,11 +51,12 @@ class Charm_Category {
         $select = $category->select();
         $select->where('mandant = ?', 24);
 	$select->where('table_name = ?', $this->table);
+	$select->where('this_table_alias = ?', $this->label);
 	$select->order('name asc');
         $rows = $category->fetchAll($select);
 
         foreach($rows as $value) {
-            $ret[] = new Charm_Category($this->table, $value->rowid);
+            $ret[] = new Charm_Category($this->table, $this->label, $value->rowid);
         }
 
         return $ret;

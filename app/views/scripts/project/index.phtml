@@ -8,11 +8,44 @@
     </div>
 </div>
 <div class="well">
-    FILTER
+    <!-- Category1: -->
+    <select>
+	<option value="">---</option>
     <?php
-    print_r($this->categories);
-    die();
+	foreach($this->category1 as $value) {
+	    echo "<option value=\"".$value->getId()."\">".$value->getName()."</option>";
+	}
     ?>
+    </select>
+    <!-- Category2: -->
+    <select>
+	<option value="">---</option>
+    <?php
+	foreach($this->category2 as $value) {
+	    echo "<option value=\"".$value->getId()."\">".$value->getName()."</option>";
+	}
+    ?>
+    </select>
+    <!-- Category3: -->
+    <select>
+	<option value="">---</option>
+    <?php
+	foreach($this->category3 as $value) {
+	    echo "<option value=\"".$value->getId()."\">".$value->getName()."</option>";
+	}
+    ?>
+    </select>
+    <!-- Employees: -->
+    <select>
+	<option value="">---</option>
+    <?php
+	foreach($this->employees as $value) {
+	    echo "<option value=\"".$value->getId()."\">".$value->getName().", ".$value->getFirstName()."</option>";
+	}
+    ?>
+    </select>
+
+    <input type="submit" name="" value="GO" class="btn btn-primary">
 </div>
 <div class="well">
     <table class="table table-hover table-bordered table-striped" style="background-color: #ffffff;">

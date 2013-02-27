@@ -29,8 +29,18 @@ class ProjectController extends Zend_Controller_Action {
 	$this->view->projects = $showProjects;
 
 	// get categories
-	$category = new Charm_Category('project');
-	$this->view->categories = $category->getCategories();
+	$category1 = new Charm_Category('project', 'category1');
+	$this->view->category1 = $category1->getCategories();
+
+	$category2 = new Charm_Category('project', 'category2');
+	$this->view->category2 = $category2->getCategories();
+
+	$category3 = new Charm_Category('project', 'category3');
+	$this->view->category3 = $category3->getCategories();
+
+	// users
+	$employees = new Charm_Employee();
+	$this->view->employees = $employees->getEmployees();
     }
 
     public function __call($name, $params) {
