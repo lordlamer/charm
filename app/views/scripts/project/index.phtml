@@ -7,46 +7,51 @@
 	<button class="btn btn-primary">Projekt anlegen</button>
     </div>
 </div>
-<div class="well">
-    <!-- Category1: -->
-    <select>
-	<option value="">---</option>
-    <?php
-	foreach($this->category1 as $value) {
-	    echo "<option value=\"".$value->getId()."\">".$value->getName()."</option>";
-	}
-    ?>
-    </select>
-    <!-- Category2: -->
-    <select>
-	<option value="">---</option>
-    <?php
-	foreach($this->category2 as $value) {
-	    echo "<option value=\"".$value->getId()."\">".$value->getName()."</option>";
-	}
-    ?>
-    </select>
-    <!-- Category3: -->
-    <select>
-	<option value="">---</option>
-    <?php
-	foreach($this->category3 as $value) {
-	    echo "<option value=\"".$value->getId()."\">".$value->getName()."</option>";
-	}
-    ?>
-    </select>
-    <!-- Employees: -->
-    <select>
-	<option value="">---</option>
-    <?php
-	foreach($this->employees as $value) {
-	    echo "<option value=\"".$value->getId()."\">".$value->getName().", ".$value->getFirstName()."</option>";
-	}
-    ?>
-    </select>
 
-    <input type="submit" name="" value="GO" class="btn btn-primary">
-</div>
+<form action="project/index" method="post" class="form-inline">
+    <div class="well text-center">
+	<!-- Category1: -->
+	<select name="category1">
+	    <option value="">---</option>
+	    <?php
+	    foreach ($this->category1 as $value) {
+		echo "<option".(($this->category1_selected == $value->getId()) ? ' selected="selected"' : '')." value=\"" . $value->getId() . "\">" . $value->getName() . "</option>";
+	    }
+	    ?>
+	</select>
+	<!-- Category2: -->
+	<select name="category2">
+	    <option value="">---</option>
+	    <?php
+	    foreach ($this->category2 as $value) {
+		echo "<option".(($this->category2_selected == $value->getId()) ? ' selected="selected"' : '')." value=\"" . $value->getId() . "\">" . $value->getName() . "</option>";
+	    }
+	    ?>
+	</select>
+	<!-- Category3: -->
+	<select name="category3">
+	    <option value="">---</option>
+	    <?php
+	    foreach ($this->category3 as $value) {
+		echo "<option".(($this->category3_selected == $value->getId()) ? ' selected="selected"' : '')." value=\"" . $value->getId() . "\">" . $value->getName() . "</option>";
+	    }
+	    ?>
+	</select>
+	<!-- Employees: -->
+	<select name="employee">
+	    <option value="">---</option>
+	    <?php
+	    foreach ($this->employees as $value) {
+		echo "<option".(($this->employee_selected == $value->getId()) ? ' selected="selected"' : '')." value=\"" . $value->getId() . "\">" . $value->getName() . ", " . $value->getFirstName() . "</option>";
+	    }
+	    ?>
+	</select>
+
+	<input type="submit" name="" value="GO" class="btn btn-primary">
+
+    </div>
+</form>
+
 <div class="well">
     <table class="table table-hover table-bordered table-striped" style="background-color: #ffffff;">
 	<thead>
@@ -60,27 +65,27 @@
 	</thead>
 	<tbody>
 	    <?php
-	    foreach($this->projects as $key => $value) {
-	    ?>
-	    <tr>
-		<td><?= $value->getId() ?></td>
-		<td><a href="./project/<?= $value->getId() ?>"><?= $value->getName() ?></a></td>
-		<td><?= $value->getCompany(); ?></td>
-		<td><?= $value->getSupervisor(); ?></td>
-		<td>
-		    <div class="btn-group">
-			<a class="btn btn-primary" href="./project/edit/<?= $value->getId() ?>">edit</a>
-			<button class="btn dropdown-toggle btn-primary" data-toggle="dropdown">
-			    <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu">
-			    <li><a href="./project/disable/<?= $value->getId() ?>">disable</a></li>
-			    <li><a href="./project/delete/<?= $value->getId() ?>">delete</a></li>
-			</ul>
-		    </div>
-		</td>
-	    </tr>
-	    <?php
+	    foreach ($this->projects as $key => $value) {
+		?>
+    	    <tr>
+    		<td><?= $value->getId() ?></td>
+    		<td><a href="./project/<?= $value->getId() ?>"><?= $value->getName() ?></a></td>
+    		<td><?= $value->getCompany(); ?></td>
+    		<td><?= $value->getSupervisor(); ?></td>
+    		<td>
+    		    <div class="btn-group">
+    			<a class="btn btn-primary" href="./project/edit/<?= $value->getId() ?>">edit</a>
+    			<button class="btn dropdown-toggle btn-primary" data-toggle="dropdown">
+    			    <span class="caret"></span>
+    			</button>
+    			<ul class="dropdown-menu">
+    			    <li><a href="./project/disable/<?= $value->getId() ?>">disable</a></li>
+    			    <li><a href="./project/delete/<?= $value->getId() ?>">delete</a></li>
+    			</ul>
+    		    </div>
+    		</td>
+    	    </tr>
+		<?php
 	    }
 	    ?>
 	</tbody>

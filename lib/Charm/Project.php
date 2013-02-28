@@ -73,7 +73,17 @@ class Charm_Project {
         $project = new Charm_Db_Project();
         $select = $project->select();
         $select->where('mandant = ?', 24);
-	$select->where('category1 != ?', 440);
+	//$select->where('category1 != ?', 440);
+
+	if(is_array($search)) {
+	    foreach($search as $key => $value) {
+		if($key == 'employee')
+		    $select->where('employees like ?', '%'.$value.'%');
+		else
+		    $select->where($key.' = ?', $value);
+	    }
+	}
+
 	$select->order('title asc');
         $rows = $project->fetchAll($select);
 
