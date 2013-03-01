@@ -1,6 +1,9 @@
 <link rel='stylesheet' type='text/css' href='fullcalendar/fullcalendar.css' />
 <link rel='stylesheet' type='text/css' href='fullcalendar/fullcalendar.print.css' media='print' />
-<!-- <script type='text/javascript' src='../jquery/jquery-ui-1.8.23.custom.min.js'></script> -->
+
+<script type='text/javascript' src='http://code.jquery.com/ui/1.10.1/jquery-ui.js'></script>
+<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css' />
+
 <script type='text/javascript' src='fullcalendar/fullcalendar.min.js'></script>
 <script type='text/javascript'>
 
@@ -12,7 +15,63 @@
 		var y = date.getFullYear();
 
 		$('#calendar').fullCalendar({
+			header: {
+				left: 'month,agendaWeek,agendaDay',
+				center: 'title',
+				right: 'today prev,next'
+			},
 			editable: true,
+			selectable: true,
+			unselectAuto: true,
+			dayClick: function(date, allDay, jsEvent, view) {
+				if (allDay) {
+				    alert('Clicked on the entire day: ' + date);
+				}else{
+				    alert('Clicked on the slot: ' + date);
+				}
+
+				alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+				alert('Current view: ' + view.name);
+
+				// change the day's background color just for fun
+				$(this).css('background-color', 'red');
+			},
+			eventClick: function(calEvent, jsEvent, view) {
+				alert('Event: ' + calEvent.title);
+				alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+				alert('View: ' + view.name);
+
+				// change the border color just for fun
+				$(this).css('border-color', 'red');
+			},
+			eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
+				alert(
+				    "The end date of " + event.title + "has been moved " +
+				    dayDelta + " days and " +
+				    minuteDelta + " minutes."
+				);
+
+				if (!confirm("is this okay?")) {
+				    revertFunc();
+				}
+			},
+			eventDrop: function(event,dayDelta,minuteDelta,allDay,revertFunc) {
+				alert(
+				    event.title + " was moved " +
+				    dayDelta + " days and " +
+				    minuteDelta + " minutes."
+				);
+
+				if (allDay) {
+				    alert("Event is now all-day");
+				}else{
+				    alert("Event has a time-of-day");
+				}
+
+				if (!confirm("Are you sure about this change?")) {
+				    revertFunc();
+				}
+			},
 			events: [
 				{
 					title: 'All Day Event',
