@@ -30,11 +30,17 @@ class CalendarController extends Zend_Controller_Action {
 	$dates = array();
 
 	foreach($appointments as $value) {
+	    $cat = $value->getCategory();
+	    if($cat != null)
+		$color = '#'.$cat->getColor();
+	    else
+		$color = '';
 	    $dates[] = array(
 		'id' => $value->getId(),
 		'title' => $value->getTitle(),
 		'start' => $value->getStart(), //'2013-03-28T13:15:30Z',
 		'end' => $value->getEnd(), //'2013-03-29T13:15:30Z',
+		'color' => $color,
 		//'url' => 'http://google.com/',
 		//'allDay' => false
 		//color

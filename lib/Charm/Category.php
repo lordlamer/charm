@@ -8,6 +8,7 @@ class Charm_Category {
     protected $label = null;
     protected $id = null;
     protected $name = null;
+    protected $color = null;
 
     public function __construct($table, $label, $id = null) {
 	$this->table = $table;
@@ -30,6 +31,7 @@ class Charm_Category {
 
         $this->id = $row['rowid'];
         $this->name = $row['name'];
+	$this->color = $row['color'];
     }
 
     public function getTable() {
@@ -42,6 +44,10 @@ class Charm_Category {
 
     public function getName() {
 	return $this->name;
+    }
+
+    public function getColor() {
+	return $this->color;
     }
 
     public function getCategories() {

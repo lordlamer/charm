@@ -6,6 +6,7 @@ class Charm_Appointment {
     protected $description = null;
     protected $start = null;
     protected $end = null;
+    protected $category = null;
 
     public function __construct($id = null) {
 	if(!empty($id))
@@ -21,6 +22,7 @@ class Charm_Appointment {
 	$this->description = $row[0]['description'];
 	$this->start = $row[0]['dt_start'];
 	$this->end = $row[0]['dt_end'];
+	$this->category = $row[0]['category1'];
     }
 
     public function getId() {
@@ -33,6 +35,13 @@ class Charm_Appointment {
 
     public function getDescription() {
 	return $this->description;
+    }
+
+    public function getCategory() {
+	if($this->category != '')
+	    return new Charm_Category('appointment', 'category1', $this->category);
+	else
+	    return null;
     }
 
     public function getStart() {
