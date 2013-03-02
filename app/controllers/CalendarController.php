@@ -18,27 +18,33 @@ class CalendarController extends Zend_Controller_Action {
 	$this->_helper->layout()->disableLayout();
         $this->_helper->viewRenderer->setNoRender(true);
 
-$response = $this->getResponse();
-$response->setHeader('Content-type', 'application/json', true);
+	$response = $this->getResponse();
+	$response->setHeader('Content-type', 'application/json', true);
 
-$date = date("j", time());
-$month = date("n", time());
-$year = date("Y", time());
-$dates = array();
-$dates[] = array(
-    'id' => 123,
-    'title' => 'Click for Google',
-    'start' => '2013-03-28T13:15:30Z',
-    'end' => '2013-03-29T13:15:30Z',
-    //'url' => 'http://google.com/',
-    //'allDay' => false
-    //color
-    //backgroundColor
-    //borderColor
-    //textColor
-);
+	$startDate = date('Y-m-d H:i:s', $this->_getParam('start'));
+	$endDate = date('Y-m-d H:i:s', $this->_getParam('end'));
 
-echo json_encode($dates);
+	$appointment = new Charm_Appointment();
+	$appointments = $appointment->find(array('dt_start' => $startDate, 'dt_end' => $endDate));
+
+	$dates = array();
+
+	foreach($appointments as $value) {
+	    $dates[] = array(
+		'id' => $value->getId(),
+		'title' => $value->getTitle(),
+		'start' => $value->getStart(), //'2013-03-28T13:15:30Z',
+		'end' => $value->getEnd(), //'2013-03-29T13:15:30Z',
+		//'url' => 'http://google.com/',
+		//'allDay' => false
+		//color
+		//backgroundColor
+		//borderColor
+		//textColor
+	    );
+	}
+
+	echo json_encode($dates);
     }
 }
 
