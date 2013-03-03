@@ -67,7 +67,7 @@ class Charm_Project {
 	    return '';
     }
 
-    public function find($search = null) {
+    public function find($search = null, $notInSearch = null) {
         $ret = array();
 
         $project = new Charm_Db_Project();
@@ -81,6 +81,15 @@ class Charm_Project {
 		    $select->where('employees like ?', '%'.$value.'%');
 		else
 		    $select->where($key.' = ?', $value);
+	    }
+	}
+
+	if(is_array($notInSearch)) {
+	    foreach($notInSearch as $key => $value) {
+		if($key == 'employee')
+		    $select->where('employees not like ?', '%'.$value.'%');
+		else
+		    $select->where($key.' != ?', $value);
 	    }
 	}
 

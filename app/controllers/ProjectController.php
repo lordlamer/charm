@@ -33,6 +33,9 @@ class ProjectController extends Zend_Controller_Action {
 	$this->view->employees_selected = '';
 
 	$projectFilter = array();
+	$projectFilterFalse = array();
+
+	$hide_archive_projects = true;
 
 	if ($this->getRequest()->getMethod() == 'POST') {
 	    $this->view->category1_selected = $this->_getParam('category1');
@@ -43,11 +46,19 @@ class ProjectController extends Zend_Controller_Action {
 	    if($this->_getParam('category3') != '') $projectFilter['category3'] = $this->_getParam('category3');
 	    $this->view->employee_selected = $this->_getParam('employee');
 	    if($this->_getParam('employee') != '') $projectFilter['employee'] = $this->_getParam('employee');
+
+	    if($this->_getParam('hide_archive_projects') == '1')
+		$hide_archive_projects = true;
+	    else
+		$hide_archive_projects = false;
 	}
+
+	if($hide_archive_projects)
+	    $projectFilterFalse['category1'] = 440; // 440 = Archiv
 
 	// projects
 	$project = new Charm_Project();
-	$projects = $project->find($projectFilter);
+	$projects = $project->find($projectFilter, $projectFilterFalse);
 
 	$showProjects = array();
 
