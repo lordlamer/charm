@@ -116,6 +116,16 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
 	}
     }
 
+    protected function _initMandant() {
+	// set mandant id for system
+	$mandant = 24;
+
+	// save mandant id to registry
+	Zend_Registry::set('mandant', 24);
+
+	return $mandant;
+    }
+
     /**
      * init layout
      */
