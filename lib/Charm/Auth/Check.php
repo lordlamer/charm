@@ -21,7 +21,7 @@ class Charm_Auth_Check extends Zend_Controller_Plugin_Abstract {
 		    // check for valid session
 		    $path = $this->getRequest()->getControllerName() . "/" . $this->getRequest()->getActionName();
 		    if(!$auth->isValidLogin() && $path != 'index/login') {
-			    $this->getResponse()->setRedirect($config->base->url . 'login');
+			    $this->getResponse()->setRedirect($config->base->base_url . '/login');
 		    } else {
 			    $user->getDataFromDb($session->username);
 		    }
