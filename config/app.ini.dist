@@ -42,7 +42,7 @@ params.host = "localhost"
 params.username = "root"
 params.password = ""
 params.dbname = "charm"
-params.charset = "utf8"
+;params.charset = "utf8"
 profiler = true
 
 [cache]
