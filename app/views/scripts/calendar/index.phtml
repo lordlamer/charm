@@ -72,6 +72,19 @@
 				    revertFunc();
 				}
 			},
+			eventMouseover: function( event, jsEvent, view ) {
+				console.log('Event: ' + event.title);
+				console.log('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+				console.log('View: ' + view.name);
+			},
+			eventRender: function (event, element) {
+			    element.attr('id', 'calendarItem_' + event.id);
+			    console.log('id', 'calendarItem_' + event.id);
+			    element.attr('data-toggle', 'popoverme');
+
+			    // define popover
+			    $(element).popover({title:event.title, content: event.description, placement: 'top', trigger: 'hover', container: 'body'});
+			},
 			firstDay: 1,
 			monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 			monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -125,5 +138,5 @@
 
 <h2>Termine</h2>
 <hr>
-
+<div id="calendarTooltip1"></div>
 <div id='calendar'></div>

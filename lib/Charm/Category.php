@@ -23,7 +23,7 @@ class Charm_Category {
 
 	$select = $category->select();
 	$select->where('rowid = ?', $id);
-        $select->where('mandant = ?', 24);
+        $select->where('mandant = ?', Zend_Registry::get('mandant'));
 	$select->where('table_name = ?', $this->table);
 	$select->where('this_table_alias = ?', $this->label);
 
@@ -55,7 +55,7 @@ class Charm_Category {
 
         $category = new Charm_Db_Category();
         $select = $category->select();
-        $select->where('mandant = ?', 24);
+        $select->where('mandant = ?', Zend_Registry::get('mandant'));
 	$select->where('table_name = ?', $this->table);
 	$select->where('this_table_alias = ?', $this->label);
 	$select->order('name asc');

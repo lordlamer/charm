@@ -57,7 +57,7 @@ class Charm_Appointment {
 
         $appointment = new Charm_Db_Appointment();
         $select = $appointment->select();
-        $select->where('mandant = ?', 24);
+        $select->where('mandant = ?', Zend_Registry::get('mandant'));
 
 	if(is_array($search)) {
 	    foreach($search as $key => $value) {

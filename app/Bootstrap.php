@@ -233,8 +233,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
 
 	    // settings
 	    $router->addRoute('settings', new Zend_Controller_Router_Route('settings', array(
-			'controller' => 'settings',
-			'action' => 'index')));
+			'controller' => 'index',
+			'action' => 'settings')));
 
 	    // dashboard
 	    $router->addRoute('dashboard', new Zend_Controller_Router_Route('dashboard', array(

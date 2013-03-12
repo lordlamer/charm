@@ -72,7 +72,7 @@ class Charm_Project {
 
         $project = new Charm_Db_Project();
         $select = $project->select();
-        $select->where('mandant = ?', 24);
+        $select->where('mandant = ?', Zend_Registry::get('mandant'));
 	//$select->where('category1 != ?', 440);
 
 	if(is_array($search)) {

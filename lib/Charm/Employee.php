@@ -15,7 +15,7 @@ class Charm_Employee {
 
 	$select = $employee->select();
 	$select->where('rowid = ?', $id);
-        $select->where('mandant = ?', 24);
+        $select->where('mandant = ?', Zend_Registry::get('mandant'));
 
         $row = $employee->fetchRow($select);
 
@@ -41,7 +41,7 @@ class Charm_Employee {
 
         $employee = new Charm_Db_Employee();
         $select = $employee->select();
-        $select->where('mandant = ?', 24);
+        $select->where('mandant = ?', Zend_Registry::get('mandant'));
 	$select->where('deactivated = ?', 0);
 	$select->order('name asc');
         $rows = $employee->fetchAll($select);

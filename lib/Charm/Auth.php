@@ -16,7 +16,7 @@ class Charm_Auth {
 	public function checkLogin($username, $password) {
 		$db = Zend_Registry::get('db');
 		$passwordhash = crypt($password,"yk");
-		$res = $db->query('SELECT * FROM  users WHERE mandant=24 AND username=:username AND password=:password', array(':username' => $username, ':password' => $passwordhash));
+		$res = $db->query('SELECT * FROM  users WHERE mandant='.Zend_Registry::get('mandant').' AND username=:username AND password=:password', array(':username' => $username, ':password' => $passwordhash));
 
 		if($row = $res->fetch()) {
 			$session = Zend_Registry::get('session');
@@ -34,7 +34,7 @@ class Charm_Auth {
 		$db = Zend_Registry::get('db');
 		$session = Zend_Registry::get('session');
 		if($session->username && $session->passwordhash) {
-			$res = $db->query('SELECT rowid FROM users WHERE mandant=24 AND username=:username and password=:password', array(':username' => $session->username, ':password' => $session->passwordhash));
+			$res = $db->query('SELECT rowid FROM users WHERE mandant='.Zend_Registry::get('mandant').' AND username=:username and password=:password', array(':username' => $session->username, ':password' => $session->passwordhash));
 
 			if($row = $res->fetch()) {
 				return true;

@@ -33,5 +33,8 @@ class IndexController extends Zend_Controller_Action {
 	$this->_redirect('index');
     }
 
+    public function settingsAction() {
+
+    }
 }
 
