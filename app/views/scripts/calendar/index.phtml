@@ -83,7 +83,7 @@
 			    element.attr('data-toggle', 'popoverme');
 
 			    // define popover
-			    $(element).popover({title:event.title, content: event.description, placement: 'top', trigger: 'hover', container: 'body'});
+			    $(element).popover({title:event.title, content: event.description, placement: 'top', trigger: 'hover', container: 'body', html: true});
 			},
 			firstDay: 1,
 			monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],

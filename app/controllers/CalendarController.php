@@ -31,14 +31,18 @@ class CalendarController extends Zend_Controller_Action {
 
 	foreach($appointments as $value) {
 	    $cat = $value->getCategory();
-	    if($cat != null)
+	    if($cat != null) {
+		$catName = $cat->getName();
 		$color = '#'.$cat->getColor();
-	    else
+	    } else {
 		$color = '';
+		$catName = '';
+	    }
+
 	    $dates[] = array(
 		'id' => $value->getId(),
 		'title' => $value->getTitle(),
-		'description' => $value->getDescription(),
+		'description' => nl2br($value->getDescription()) . (($catName != '') ? '<span style="background-color: '.$color.';">' . $catName .'</span>' : '' ) . '<br><br>User<br>Date<br>Time',
 		'start' => $value->getStart(), //'2013-03-28T13:15:30Z',
 		'end' => $value->getEnd(), //'2013-03-29T13:15:30Z',
 		'color' => $color,
